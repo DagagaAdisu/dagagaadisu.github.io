@@ -1,153 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO Meta Tags -->
-  <title>Dagaga Adisu | Software Developer & AI Engineer</title>
-  <meta name="description" content="Personal portfolio of Dagaga Adisu — Projects in Machine Learning, Mobile Apps, and Web Development." />
-  <meta name="keywords" content="Dagaga Adisu, Portfolio, Developer, Flutter, Machine Learning, Python" />
-  <meta name="author" content="Dagaga Adisu" />
-  <meta name="google-site-verification" content="jxiR3_VXOqy81eaDTYutF4vnx0ImrFMn8pBo8osa_ps" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dagaga Adisu — Aspiring AI/ML Engineer | Ethiopia</title>
+    <meta name="description" content="Dagaga Adisu — aspiring AI/ML engineer from Ethiopia. Self-taught in mathematics, machine learning, Python, TensorFlow, scikit-learn, Flutter. Projects in AI, data science, mobile apps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- design tokens ---------- */
+        :root {
+            --bg-page: #f6f7f9;
+            --bg-surface: #ffffff;
+            --bg-subtle: #f2f5f8;
+            --bg-accent-soft: #e8eef4;
 
-  <!-- Open Graph for Social Media Link Previews -->
-  <meta property="og:title" content="Dagaga Adisu | Portfolio" />
-  <meta property="og:description" content="Check out my latest projects and software development work." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dagagaadisu.github.io/" />
+            --text-primary: #111c2b;
+            --text-secondary: #3f4e62;
+            --text-muted: #6a7b8e;
 
-  <!-- Simple CSS Styling -->
-  <style>
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --text-color: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-color: #38bdf8;
-      --border-color: #334155;
-    }
+            --border-light: #dfe6ee;
+            --border-medium: #c8d4e0;
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+            --accent: #1f4e7a;
+            --accent-hover: #153a5c;
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.04);
+        }
 
-    header {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 2rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      color: var(--text-color);
-      margin-bottom: 0.5rem;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2.5rem 1.5rem;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .subtitle {
-      font-size: 1.25rem;
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-    }
+        .container {
+            max-width: 940px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 3rem 3.2rem;
+            border: 1px solid var(--border-light);
+        }
 
-    .bio {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
+        /* ---------- header ---------- */
+        .intro {
+            padding-bottom: 2.2rem;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 2.2rem;
+        }
 
-    section {
-      margin-bottom: 3rem;
-    }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+            line-height: 1.15;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
-      border-left: 4px solid var(--accent-color);
-      padding-left: 0.75rem;
-    }
+        .subhead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 0.9rem;
+            letter-spacing: -0.01em;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+        .location-badge {
+            display: inline-block;
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.3rem;
+            border: 1px solid var(--border-medium);
+            letter-spacing: 0.01em;
+        }
 
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
+        .bio-short {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin-top: 0.4rem;
+        }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-color);
-    }
+        .bio-short strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-color);
-    }
+        /* ---------- sections ---------- */
+        section {
+            margin-top: 2.4rem;
+        }
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.015em;
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-light);
+        }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+        /* ---------- skill chips ---------- */
+        .skill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.65rem;
+            margin-bottom: 0.85rem;
+        }
 
-    .tag {
-      background-color: rgba(56, 189, 248, 0.1);
-      color: var(--accent-color);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-    }
+        .skill-chip {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.32rem 0.95rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.12s ease;
+            cursor: default;
+        }
 
-    footer {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 4rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 2rem;
-    }
+        .skill-chip:hover {
+            background: var(--bg-accent-soft);
+            border-color: var(--border-medium);
+            color: var(--accent);
+        }
 
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
+        .skill-note {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .skill-note strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ---------- quote / differentiator ---------- */
+        .highlight-quote {
+            background: var(--bg-subtle);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 1.8rem 0;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 1.02rem;
+            line-height: 1.55;
+        }
+
+        .highlight-quote::before {
+            content: "—";
+            color: var(--text-muted);
+            margin-right: 0.35rem;
+        }
+
+        /* ---------- projects ---------- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.9rem;
+            margin-top: 0.8rem;
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.1rem;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .project-card .project-name {
+            font-weight: 600;
+            font-size: 0.98rem;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .project-card .project-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* ---------- about / long bio ---------- */
+        .long-bio p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 740px;
+        }
+
+        .long-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ---------- footer ---------- */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+        }
+
+        .footer-note span {
+            font-weight: 400;
+        }
+
+        .footer-note strong {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 700px) {
+            body { padding: 1.2rem; }
+            .container { padding: 2rem 1.5rem; border-radius: var(--radius-md); }
+            h1 { font-size: 2rem; }
+            .subhead { font-size: 1.05rem; }
+            .project-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .project-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- intro -->
+        <div class="intro">
+            <h1>Dagaga Adisu</h1>
+            <div class="subhead">Aspiring AI/ML Engineer · Ethiopia</div>
+            <div class="location-badge">Based in Ethiopia</div>
+            <p class="bio-short">
+                <strong>Self-taught AI/ML engineer</strong> with a strong foundation in mathematics, 
+                machine learning, and software development. I build practical projects to solve real problems.
+            </p>
+        </div>
 
-  <div class="container">
-    <header>
-      <h1>
+        <!-- core profile / skills -->
+        <section>
+            <h2>Core profile</h2>
+            <div class="skill-group">
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">Dart</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">HTML/CSS</span>
+                <span class="skill-chip">NumPy</span>
+                <span class="skill-chip">Pandas</span>
+                <span class="skill-chip">scikit-learn</span>
+                <span class="skill-chip">TensorFlow</span>
+                <span class="skill-chip">XGBoost</span>
+                <span class="skill-chip">Flutter</span>
+                <span class="skill-chip">Classical ML</span>
+                <span class="skill-chip">Neural Networks</span>
+            </div>
+            <div class="skill-group">
+                <span class="skill-chip">Calculus I–III</span>
+                <span class="skill-chip">Linear Algebra</span>
+                <span class="skill-chip">Probability &amp; Statistics</span>
+                <span class="skill-chip">Mathematical foundations of ML</span>
+                <span class="skill-chip">University-level physics</span>
+            </div>
+            <p class="skill-note">
+                <strong>Current development:</strong> Flutter mobile applications, AI projects, practical software.
+            </p>
+        </section>
+
+        <!-- differentiator / quote -->
+        <div class="highlight-quote">
+            A self-taught aspiring AI/ML engineer who began programming with limited resources, 
+            developed a strong foundation in mathematics and machine learning, 
+            and builds practical software to solve real problems.
+        </div>
+
+        <!-- projects -->
+        <section>
+            <h2>Projects &amp; experiments</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-name">DagagaAI</div>
+                    <div class="project-desc">AI-powered application/bot</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">AI/ML experiments</div>
+                    <div class="project-desc">SVM, Naive Bayes, logistic regression, gradient boosting, XGBoost, PCA, clustering, neural networks</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Titanic ML project</div>
+                    <div class="project-desc">Classic machine learning pipeline &amp; prediction</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Iris classification</div>
+                    <div class="project-desc">Multi-class classification experiments</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">House-price prediction</div>
+                    <div class="project-desc">Regression &amp; feature engineering</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">K-means clustering</div>
+                    <div class="project-desc">Unsupervised learning implementation</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Flutter Weather App</div>
+                    <div class="project-desc">Mobile weather application</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Pocket Pharmacy</div>
+                    <div class="project-desc">Medication tracking &amp; reminder app</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Exam Tracker</div>
+                    <div class="project-desc">Productivity tool for exam scheduling</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Pomodoro / productivity</div>
+                    <div class="project-desc">Focus timer &amp; productivity applications</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">Bible / streak app</div>
+                    <div class="project-desc">Concept for habit &amp; streak tracking</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-name">AI university selection</div>
+                    <div class="project-desc">Concept: AI-driven university guidance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- long bio -->
+        <section>
+            <h2>About</h2>
+            <div class="long-bio">
+                <p>
+                    I am an aspiring AI/ML Engineer from Ethiopia with a strong interest in artificial intelligence, 
+                    mathematics, physics, and software engineering. I began programming independently and have developed 
+                    experience with Python, machine learning, data science, and mobile application development. My work 
+                    includes projects involving scikit-learn, TensorFlow, XGBoost, NumPy, Pandas, Flutter, and practical 
+                    AI applications.
+                </p>
+                <p>
+                    My approach to AI is strongly grounded in mathematics. I have independently studied subjects including 
+                    calculus, linear algebra, probability, statistics, and university-level physics, and I use this foundation 
+                    to understand machine-learning algorithms beyond simply using libraries.
+                </p>
+                <p>
+                    I enjoy building projects that solve concrete problems and exploring how artificial intelligence can be 
+                    applied to scientific and real-world challenges. My long-term goal is to become a highly capable AI/ML 
+                    engineer and work at the intersection of artificial intelligence, science, and biotechnology.
+                </p>
+                <p>
+                    I use this portfolio to document what I build, what I learn, and the problems I am trying to solve.
+                </p>
+            </div>
+        </section>
+
+        <!-- footer / education goal -->
+        <div class="footer-note">
+            <span><strong>Education goal:</strong> Rigorous environment focused on advanced science and technology</span>
+            <span><strong>Long-term interest:</strong> AI for genetics, healthcare, and difficult scientific problems</span>
+        </div>
+    </div>
+</body>
+</html>
