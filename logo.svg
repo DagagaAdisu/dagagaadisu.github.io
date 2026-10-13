@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dagaga Adisu monogram">
+  <rect width="64" height="64" rx="10" fill="#0f766e"/>
+  <path d="M14 16h14c10 0 18 7 18 16s-8 16-18 16H14V16zm8 8v16h6c6 0 10-3.5 10-8s-4-8-10-8h-6z" fill="#ffffff"/>
+  <path d="M40 40l6-8 6 8h-4v8h-4v-8h-4z" fill="#ffffff"/>
+</svg>
