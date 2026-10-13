@@ -1,404 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dagaga Adisu — Aspiring AI/ML Engineer | Ethiopia</title>
-    <meta name="description" content="Dagaga Adisu — aspiring AI/ML engineer from Ethiopia. Self-taught in mathematics, machine learning, Python, TensorFlow, scikit-learn, Flutter. Projects in AI, data science, mobile apps.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <style>
-        /* ---------- design tokens ---------- */
-        :root {
-            --bg-page: #f6f7f9;
-            --bg-surface: #ffffff;
-            --bg-subtle: #f2f5f8;
-            --bg-accent-soft: #e8eef4;
-
-            --text-primary: #111c2b;
-            --text-secondary: #3f4e62;
-            --text-muted: #6a7b8e;
-
-            --border-light: #dfe6ee;
-            --border-medium: #c8d4e0;
-
-            --accent: #1f4e7a;
-            --accent-hover: #153a5c;
-
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-
-            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.04);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-page);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 2.5rem 1.5rem;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 940px;
-            margin: 0 auto;
-            background: var(--bg-surface);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            padding: 3rem 3.2rem;
-            border: 1px solid var(--border-light);
-        }
-
-        /* ---------- header ---------- */
-        .intro {
-            padding-bottom: 2.2rem;
-            border-bottom: 1px solid var(--border-light);
-            margin-bottom: 2.2rem;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-            margin-bottom: 0.35rem;
-            line-height: 1.15;
-        }
-
-        .subhead {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 0.9rem;
-            letter-spacing: -0.01em;
-        }
-
-        .location-badge {
-            display: inline-block;
-            background: var(--bg-accent-soft);
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            margin-bottom: 1.3rem;
-            border: 1px solid var(--border-medium);
-            letter-spacing: 0.01em;
-        }
-
-        .bio-short {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            max-width: 720px;
-            margin-top: 0.4rem;
-        }
-
-        .bio-short strong {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* ---------- sections ---------- */
-        section {
-            margin-top: 2.4rem;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: -0.015em;
-            margin-bottom: 1.1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        /* ---------- skill chips ---------- */
-        .skill-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem 0.65rem;
-            margin-bottom: 0.85rem;
-        }
-
-        .skill-chip {
-            background: var(--bg-subtle);
-            border: 1px solid var(--border-light);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.32rem 0.95rem;
-            border-radius: var(--radius-sm);
-            transition: all 0.12s ease;
-            cursor: default;
-        }
-
-        .skill-chip:hover {
-            background: var(--bg-accent-soft);
-            border-color: var(--border-medium);
-            color: var(--accent);
-        }
-
-        .skill-note {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-top: 0.8rem;
-        }
-
-        .skill-note strong {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* ---------- quote / differentiator ---------- */
-        .highlight-quote {
-            background: var(--bg-subtle);
-            border-left: 4px solid var(--accent);
-            padding: 1.2rem 1.6rem;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            margin: 1.8rem 0;
-            color: var(--text-primary);
-            font-weight: 500;
-            font-size: 1.02rem;
-            line-height: 1.55;
-        }
-
-        .highlight-quote::before {
-            content: "—";
-            color: var(--text-muted);
-            margin-right: 0.35rem;
-        }
-
-        /* ---------- projects ---------- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 0.9rem;
-            margin-top: 0.8rem;
-        }
-
-        .project-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 1rem 1.1rem;
-            transition: border-color 0.15s, box-shadow 0.15s;
-        }
-
-        .project-card:hover {
-            border-color: var(--border-medium);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .project-card .project-name {
-            font-weight: 600;
-            font-size: 0.98rem;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.01em;
-        }
-
-        .project-card .project-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.45;
-        }
-
-        /* ---------- about / long bio ---------- */
-        .long-bio p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 740px;
-        }
-
-        .long-bio p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ---------- footer ---------- */
-        .footer-note {
-            margin-top: 2.8rem;
-            padding-top: 1.6rem;
-            border-top: 1px solid var(--border-light);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.8rem 1.5rem;
-        }
-
-        .footer-note span {
-            font-weight: 400;
-        }
-
-        .footer-note strong {
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* ---------- responsive ---------- */
-        @media (max-width: 700px) {
-            body { padding: 1.2rem; }
-            .container { padding: 2rem 1.5rem; border-radius: var(--radius-md); }
-            h1 { font-size: 2rem; }
-            .subhead { font-size: 1.05rem; }
-            .project-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .project-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dagaga Adisu Debela | Developer, ML and Android Builder in Addis Ababa</title>
+<meta name="description" content="Dagaga Adisu Debela, also known as Dagaga Tesla, is an 18 year old developer from Addis Ababa building Android apps, machine learning models, and web tools. Student at Shaggar Institute of Technology.">
+<meta name="keywords" content="Dagaga Adisu, Dagaga Adisu Debela, Dagaga A. Debela, Dagaga Tesla, Ethiopian developer, Addis Ababa developer, Android developer Ethiopia, machine learning Ethiopia, Shaggar Institute of Technology, SIT student, DNote app, Dosette Box, DagooL, marvel_codes">
+<meta name="author" content="Dagaga Adisu Debela">
+<link rel="canonical" href="https://dagagaadisu.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dagaga Adisu Debela | Developer, ML and Android Builder">
+<meta property="og:description" content="18 year old developer from Addis Ababa. Android apps, machine learning, web tools. Student at Shaggar Institute of Technology.">
+<meta property="og:url" content="https://dagagaadisu.github.io/">
+<meta property="og:image" content="https://dagagaadisu.github.io/logo.svg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dagaga Adisu Debela | Developer">
+<meta name="twitter:description" content="Android apps, machine learning, web tools. Addis Ababa.">
+<meta name="twitter:image" content="https://dagagaadisu.github.io/logo.svg">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dagaga Adisu Debela",
+  "alternateName": ["Dagaga Adisu", "Dagaga A. Debela", "Dagaga Tesla"],
+  "url": "https://dagagaadisu.github.io/",
+  "image": "https://dagagaadisu.github.io/logo.svg",
+  "email": "mailto:dagagaaddisulearn@gmail.com",
+  "gender": "Male",
+  "birthDate": "2008-02-29",
+  "jobTitle": "Developer",
+  "knowsLanguage": ["Afan Oromo", "Amharic", "English", "French"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Addis Ababa",
+    "addressCountry": "ET"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Shaggar Institute of Technology"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Wollega University Special Boarding Secondary School"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Ano Primary School"
+    }
+  ],
+  "sameAs": [
+    "https://github.com/dagagaadisu",
+    "https://www.linkedin.com/in/dagagaadisu",
+    "https://t.me/et_tesla",
+    "https://t.me/marvel_codes"
+  ],
+  "knowsAbout": [
+    "Android development",
+    "Machine learning",
+    "Web development",
+    "Graphic design"
+  ]
+}
+</script>
 </head>
 <body>
-    <div class="container">
-        <!-- intro -->
-        <div class="intro">
-            <h1>Dagaga Adisu</h1>
-            <div class="subhead">Aspiring AI/ML Engineer · Ethiopia</div>
-            <div class="location-badge">Based in Ethiopia</div>
-            <p class="bio-short">
-                <strong>Self-taught AI/ML engineer</strong> with a strong foundation in mathematics, 
-                machine learning, and software development. I build practical projects to solve real problems.
-            </p>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
 
-        <!-- core profile / skills -->
-        <section>
-            <h2>Core profile</h2>
-            <div class="skill-group">
-                <span class="skill-chip">Python</span>
-                <span class="skill-chip">Dart</span>
-                <span class="skill-chip">JavaScript</span>
-                <span class="skill-chip">HTML/CSS</span>
-                <span class="skill-chip">NumPy</span>
-                <span class="skill-chip">Pandas</span>
-                <span class="skill-chip">scikit-learn</span>
-                <span class="skill-chip">TensorFlow</span>
-                <span class="skill-chip">XGBoost</span>
-                <span class="skill-chip">Flutter</span>
-                <span class="skill-chip">Classical ML</span>
-                <span class="skill-chip">Neural Networks</span>
-            </div>
-            <div class="skill-group">
-                <span class="skill-chip">Calculus I–III</span>
-                <span class="skill-chip">Linear Algebra</span>
-                <span class="skill-chip">Probability &amp; Statistics</span>
-                <span class="skill-chip">Mathematical foundations of ML</span>
-                <span class="skill-chip">University-level physics</span>
-            </div>
-            <p class="skill-note">
-                <strong>Current development:</strong> Flutter mobile applications, AI projects, practical software.
-            </p>
-        </section>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/logo.svg" alt="" width="28" height="28">
+      <span>Dagaga Adisu</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/contact.html">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
+    </nav>
+  </div>
+</header>
 
-        <!-- differentiator / quote -->
-        <div class="highlight-quote">
-            A self-taught aspiring AI/ML engineer who began programming with limited resources, 
-            developed a strong foundation in mathematics and machine learning, 
-            and builds practical software to solve real problems.
-        </div>
+<main id="main">
+  <div class="wrap">
+    <h1>Dagaga Adisu Debela</h1>
+    <p class="lede">Developer in Addis Ababa. I build Android apps, machine learning models, and web tools. Student at Shaggar Institute of Technology.</p>
 
-        <!-- projects -->
-        <section>
-            <h2>Projects &amp; experiments</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-name">DagagaAI</div>
-                    <div class="project-desc">AI-powered application/bot</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">AI/ML experiments</div>
-                    <div class="project-desc">SVM, Naive Bayes, logistic regression, gradient boosting, XGBoost, PCA, clustering, neural networks</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Titanic ML project</div>
-                    <div class="project-desc">Classic machine learning pipeline &amp; prediction</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Iris classification</div>
-                    <div class="project-desc">Multi-class classification experiments</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">House-price prediction</div>
-                    <div class="project-desc">Regression &amp; feature engineering</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">K-means clustering</div>
-                    <div class="project-desc">Unsupervised learning implementation</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Flutter Weather App</div>
-                    <div class="project-desc">Mobile weather application</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Pocket Pharmacy</div>
-                    <div class="project-desc">Medication tracking &amp; reminder app</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Exam Tracker</div>
-                    <div class="project-desc">Productivity tool for exam scheduling</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Pomodoro / productivity</div>
-                    <div class="project-desc">Focus timer &amp; productivity applications</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">Bible / streak app</div>
-                    <div class="project-desc">Concept for habit &amp; streak tracking</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-name">AI university selection</div>
-                    <div class="project-desc">Concept: AI-driven university guidance</div>
-                </div>
-            </div>
-        </section>
+    <p>I am 18. I have shipped more than a dozen working projects across health, education, productivity, and machine learning. I speak Afan Oromo, Amharic, English, and basic French. I am open to work, collaboration, and anything that puts the tools I build in front of people who need them.</p>
 
-        <!-- long bio -->
-        <section>
-            <h2>About</h2>
-            <div class="long-bio">
-                <p>
-                    I am an aspiring AI/ML Engineer from Ethiopia with a strong interest in artificial intelligence, 
-                    mathematics, physics, and software engineering. I began programming independently and have developed 
-                    experience with Python, machine learning, data science, and mobile application development. My work 
-                    includes projects involving scikit-learn, TensorFlow, XGBoost, NumPy, Pandas, Flutter, and practical 
-                    AI applications.
-                </p>
-                <p>
-                    My approach to AI is strongly grounded in mathematics. I have independently studied subjects including 
-                    calculus, linear algebra, probability, statistics, and university-level physics, and I use this foundation 
-                    to understand machine-learning algorithms beyond simply using libraries.
-                </p>
-                <p>
-                    I enjoy building projects that solve concrete problems and exploring how artificial intelligence can be 
-                    applied to scientific and real-world challenges. My long-term goal is to become a highly capable AI/ML 
-                    engineer and work at the intersection of artificial intelligence, science, and biotechnology.
-                </p>
-                <p>
-                    I use this portfolio to document what I build, what I learn, and the problems I am trying to solve.
-                </p>
-            </div>
-        </section>
+    <p>
+      <a class="btn" href="/projects.html">See projects</a>
+      <a class="btn-ghost" href="/contact.html">Contact me</a>
+    </p>
 
-        <!-- footer / education goal -->
-        <div class="footer-note">
-            <span><strong>Education goal:</strong> Rigorous environment focused on advanced science and technology</span>
-            <span><strong>Long-term interest:</strong> AI for genetics, healthcare, and difficult scientific problems</span>
-        </div>
+    <h2>Featured work</h2>
+
+    <div class="card">
+      <h3>DNote</h3>
+      <p>An Android app that prepares students for national exams. It holds the topics from Grade 9 through Grade 12, tracks progress, and counts study streaks.</p>
+      <div class="actions">
+        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">View on GitHub</a>
+        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram channel</a>
+      </div>
     </div>
+
+    <div class="card">
+      <h3>Dosette Box</h3>
+      <p>An Android app that reminds users to take their pills on schedule and provides reference information on medications so a dose is never missed.</p>
+      <div class="actions">
+        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">View on GitHub</a>
+        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram channel</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>DagooL</h3>
+      <p>A productivity app for building good habits and running a focused day. Habits, todos, motivational prompts, and learning tools like Pomodoro and flashcards in one place.</p>
+      <div class="actions">
+        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">View on GitHub</a>
+        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram channel</a>
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <p>Currently studying at Shaggar Institute of Technology in Addis Ababa. Before that, Wollega University Special Boarding Secondary School, and Ano Primary School.</p>
+
+    <h2>Recognition</h2>
+    <ul>
+      <li>Scored 566.5 out of 600 on the Ethiopian University Entrance Examination</li>
+      <li>Won a regional QA competition</li>
+      <li>Topped my school</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+      Email <a href="mailto:dagagaaddisulearn@gmail.com">dagagaaddisulearn@gmail.com</a>.
+      Telegram <a href="https://t.me/et_tesla" rel="noopener">@et_tesla</a>.
+      Channel <a href="https://t.me/marvel_codes" rel="noopener">@marvel_codes</a>.
+      GitHub <a href="https://github.com/dagagaadisu" rel="noopener">dagagaadisu</a>.
+      LinkedIn <a href="https://www.linkedin.com/in/dagagaadisu" rel="noopener">dagagaadisu</a>.
+    </p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Dagaga Adisu Debela, Addis Ababa</span>
+    <span><a href="/sitemap.xml">Sitemap</a></span>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
 </body>
 </html>
