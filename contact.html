@@ -15,14 +15,16 @@
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <script>
 (function () {
+  var theme = 'light';
   try {
     var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-  } catch (e) {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
+    if (stored === 'dark' || stored === 'light') {
+      theme = stored;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      theme = 'dark';
+    }
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', theme);
 })();
 </script>
 <link rel="stylesheet" href="/styles.css">
@@ -36,11 +38,19 @@
       <img src="/logo.svg" alt="" width="28" height="28">
       <span>Dagaga Adisu</span>
     </a>
-    <nav class="site" aria-label="Primary">
+
+    <div class="nav-right">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site" id="primary-nav" aria-label="Primary">
       <a href="/">Home</a>
+      <a href="/about.html">About</a>
       <a href="/projects.html">Projects</a>
       <a href="/contact.html" aria-current="page">Contact</a>
-      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
     </nav>
   </div>
 </header>
