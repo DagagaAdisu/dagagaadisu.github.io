@@ -7,9 +7,48 @@
 <meta name="description" content="The page you are looking for does not exist on dagagaadisu.github.io.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
+<script>
+(function () {
+  var theme = 'light';
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') {
+      theme = stored;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      theme = 'dark';
+    }
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/logo.svg" alt="" width="28" height="28">
+      <span>Dagaga Adisu</span>
+    </a>
+
+    <div class="nav-right">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site" id="primary-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main id="main">
   <div class="wrap">
     <h1>Page not found</h1>
@@ -21,6 +60,14 @@
     </p>
   </div>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Dagaga Adisu Debela, Addis Ababa</span>
+    <span><a href="https://github.com/dagagaadisu" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
 <script src="/main.js" defer></script>
 </body>
 </html>
