@@ -55,11 +55,19 @@
       <img src="/logo.svg" alt="" width="28" height="28">
       <span>Dagaga Adisu</span>
     </a>
-    <nav class="site" aria-label="Primary">
+
+    <div class="nav-right">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site" id="primary-nav" aria-label="Primary">
       <a href="/">Home</a>
+      <a href="/about.html">About</a>
       <a href="/projects.html" aria-current="page">Projects</a>
       <a href="/contact.html">Contact</a>
-      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
     </nav>
   </div>
 </header>
@@ -128,79 +136,4 @@
     <h2>Machine learning</h2>
 
     <div class="card">
-      <h3>Emotion Analyzer</h3>
-      <p>Machine learning model that reads a piece of text and identifies the emotion expressed in it. Also does sentiment analysis.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Personal Chatbot</h3>
-      <p>A chatbot built for personal use, trained on a focused corpus.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Titanic Survival Prediction</h3>
-      <p>Classic classification exercise predicting passenger survival from the Titanic dataset.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>House Price Prediction</h3>
-      <p>Regression model that estimates house prices from input features.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <h2>Utilities</h2>
-
-    <div class="card">
-      <h3>Physics Formulas</h3>
-      <p>Contains all the physics formulas from Grade 9 through Grade 12, along with how and when to use each one.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Pomodoro Timer</h3>
-      <p>A focus timer using the Pomodoro technique.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>BMI Calculator</h3>
-      <p>Calculates body mass index from height and weight.</p>
-      <div class="actions">
-        <a class="btn-ghost" href="https://github.com/dagagaadisu" rel="noopener">GitHub</a>
-        <a class="btn-ghost" href="https://t.me/marvel_codes" rel="noopener">Telegram</a>
-      </div>
-    </div>
-  </div>
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <span>Dagaga Adisu Debela, Addis Ababa</span>
-    <span><a href="https://github.com/dagagaadisu" rel="noopener">GitHub</a></span>
-  </div>
-</footer>
-
-<script src="/main.js" defer></script>
-</body>
-</html>
+      <h3>Emotion Analyzer</
