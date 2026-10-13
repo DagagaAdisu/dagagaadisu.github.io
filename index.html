@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Android apps, machine learning, web tools. Addis Ababa.">
 <meta name="twitter:image" content="https://dagagaadisu.github.io/logo.svg">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
-  <script>
+<script>
 (function () {
   var theme = 'light';
   try {
@@ -53,18 +53,9 @@
     "addressCountry": "ET"
   },
   "alumniOf": [
-    {
-      "@type": "EducationalOrganization",
-      "name": "Shaggar Institute of Technology"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "name": "Wollega University Special Boarding Secondary School"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "name": "Ano Primary School"
-    }
+    { "@type": "EducationalOrganization", "name": "Shaggar Institute of Technology" },
+    { "@type": "EducationalOrganization", "name": "Wollega University Special Boarding Secondary School" },
+    { "@type": "EducationalOrganization", "name": "Ano Primary School" }
   ],
   "sameAs": [
     "https://github.com/dagagaadisu",
@@ -90,11 +81,19 @@
       <img src="/logo.svg" alt="" width="28" height="28">
       <span>Dagaga Adisu</span>
     </a>
-    <nav class="site" aria-label="Primary">
+
+    <div class="nav-right">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site" id="primary-nav" aria-label="Primary">
       <a href="/" aria-current="page">Home</a>
+      <a href="/about.html">About</a>
       <a href="/projects.html">Projects</a>
       <a href="/contact.html">Contact</a>
-      <button class="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
     </nav>
   </div>
 </header>
